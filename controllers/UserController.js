@@ -26,7 +26,7 @@ class UserController {
         let user = {};
 
 
-        this.formEl.elements.forEach(function (field, index) {
+        [...this.formEl.elements].forEach(function (field, index) {
 
             if (field.name == "gender") {
 
@@ -57,13 +57,11 @@ class UserController {
 
         );
 
-        return objectUser;
-
     }
 
     addLine(dataUser) {
 
-        this.tableEl.innerHTML = ` 
+        this.tableEl.innerHTML = `
         <tr>
             <td><img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm"></td>
             <td>${dataUser.name}</td>
@@ -75,9 +73,9 @@ class UserController {
                 <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
             </td>
         </tr>
+        
     `;
 
-    }
-
+    };
 
 }
